@@ -16,7 +16,10 @@ function initializeStreamListener() {
     if (messages) {
       Object.keys(messages).forEach(function (key) {
         const message = messages[key];
-        $('#stream').append(`<div>${message.body}</div>`);
+        const messageElement = $('<div></div>');
+        messageElement.append(`<img src = "${message.authorPic}"/>`);
+        messageElement.append(`<div>${message.body}</div>`);
+        $('#stream').append(messageElement);
       });
     }
   });
@@ -85,3 +88,4 @@ window.onload = function() {
     $('#login-button').attr("disabled", false);
   });
 };
+

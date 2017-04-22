@@ -19,6 +19,7 @@ function initializeStreamListener() {
         const messageElement = $('<div></div>');
         messageElement.append(`<img src = "${message.authorPic}"/>`);
         messageElement.append(`<div>${message.body}</div>`);
+        messageElement.append(`<div>${message.author}</div>`);
         $('#stream').append(messageElement);
       });
     }
